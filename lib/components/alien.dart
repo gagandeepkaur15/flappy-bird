@@ -15,9 +15,10 @@ class Alien extends SpriteComponent
 
   Future<void> onLoad() async {
     final alien = await Flame.images.load(Assets.alien);
-    size = Vector2(80, 80);
+    size = Vector2(130, 130);
     position.y = yPosition;
     position.x = gameRef.size.x / 2;
+    sprite = Sprite(alien);
 
     add(CircleHitbox());
   }

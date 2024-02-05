@@ -10,6 +10,7 @@ import 'package:flappy_bird/game/configuration.dart';
 class FlappyBirdGame extends FlameGame with TapDetector, HasCollisionDetection {
   late Bird bird;
   Timer interval = Timer(Config.planetInterval, repeat: true);
+  Timer alienInterval = Timer(Config.alienInterval, repeat: true);
 
   @override
   Future<void> onLoad() async {
@@ -17,10 +18,11 @@ class FlappyBirdGame extends FlameGame with TapDetector, HasCollisionDetection {
       Background(),
       bird = Bird(),
       PlanetGroup(),
-      // AlienGroup(),
+      AlienGroup(),
     ]);
 
     interval.onTick = () => add(PlanetGroup());
+    alienInterval.onTick = () => add(AlienGroup());
   }
 
   @override

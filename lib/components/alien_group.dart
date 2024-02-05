@@ -14,4 +14,10 @@ class AlienGroup extends PositionComponent with HasGameRef<FlappyBirdGame> {
   Future<void> onLoad() async {
     addAll([Alien(yPosition: 100)]);
   }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    position.x -= Config.gameSpeed * dt;
+  }
 }
