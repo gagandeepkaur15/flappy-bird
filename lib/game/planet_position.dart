@@ -1,0 +1,1 @@
+enum PlanetPosition {top, bottom}
